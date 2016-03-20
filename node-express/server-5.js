@@ -14,8 +14,8 @@ var promoRouter = require('./router/promoRouter');
 var leaderRouter = require('./router/leaderRouter');
 
 app.use('/dishes',dishRouter);
-app.use('/promos',promoRouter);
-app.use('/leaders',leaderRouter);
+app.use('/promotions',promoRouter);
+app.use('/leadership',leaderRouter);
 
 app.use(express.static(__dirname + '/public'));
 
