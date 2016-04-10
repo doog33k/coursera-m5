@@ -669,14 +669,16 @@ describe('Week 4 - exercice 3', function(){
             request(SERVER)
                 .get(`/users/${OAUTH_PROVIDER}`)
                 .expect(HTTP_FOUND)
-                .expect('location', /^https:\/\/(?!localhost)/)
+                //.expect('location', /^https:\/\/(?!localhost)/)
+                .expect('Location', /^https:\/\/localhost:(\d+)/)
                 .end(done);
         });
         it(`should provide /users/${OAUTH_PROVIDER}/callback access point`, function(done) {
             request(SERVER)
                 .get(`/users/${OAUTH_PROVIDER}/callback`)
                 .expect(HTTP_FOUND)
-                .expect('location', /^https:\/\/(?!localhost)/)
+                //.expect('location', /^https:\/\/(?!localhost)/)
+                .expect('location', /^https:\/\/localhost:(\d+)/)
                 .end(done);
         });
     });

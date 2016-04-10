@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 
 var config = require('./config');
 
@@ -23,8 +22,19 @@ var users = require('./routes/users');
 var dishRouter = require('./routes/dishRouter');
 var promoRouter = require('./routes/promoRouter');
 var leaderRouter = require('./routes/leaderRouter');
+var authenticate = require('./authenticate');
 
 var app = express();
+
+// Secure traffic only
+app.all('*', function(req, res, next){
+    console.log('req start: ',req.secure, req.hostname, req.url, app.get('port'));
+    if (req.secure) {
+        return next();
+    };
+
+    res.redirect('https://'+req.hostname+':'+app.get('secPort')+req.url);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,9 +50,7 @@ app.use(cookieParser());
 // passport config
 var User = require('./models/user');
 app.use(passport.initialize());
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 
