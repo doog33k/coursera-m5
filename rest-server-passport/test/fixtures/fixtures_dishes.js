@@ -31,10 +31,18 @@ module.exports = [
             {
                 "updatedAt" : "2016-03-22T16:20:57.564Z",
                 "createdAt" : "2016-03-22T14:45:13.111Z",
-                "author" : "Sonia",
+                "postedBy": "56f856c56ef091173981d864",
                 "comment" : "Makes you LOVE fish",
                 "rating" : 5,
                 "_id" : "000000000000000000001201"
+            },
+            {
+                "updatedAt" : "2016-03-22T16:20:57.564Z",
+                "createdAt" : "2016-03-22T14:45:13.111Z",
+                "postedBy": "FFFFFFFFFFFFFFFFFFFFFFFF",
+                "comment" : "Such a disgusting dish I will unregister immediatly !!!",
+                "rating" : 1,
+                "_id" : "000000000000000000001202"
             },
         ]
     },
@@ -51,7 +59,7 @@ module.exports = [
             {
                 "updatedAt" : "2016-03-22T16:20:57.562Z",
                 "createdAt" : "2016-03-22T14:44:21.955Z",
-                "author" : "Sylvain",
+                "postedBy": "56f856c56ef091173981d865",
                 "comment" : "Just like at home !",
                 "rating" : 5,
                 "_id" : "000000000000000000001301"
@@ -59,7 +67,7 @@ module.exports = [
             {
                 "updatedAt" : "2016-03-22T16:20:57.564Z",
                 "createdAt" : "2016-03-22T14:45:13.111Z",
-                "author" : "Sonia",
+                "postedBy": "56f856c56ef091173981d864",
                 "comment" : "Good but fat",
                 "rating" : 4,
                 "_id" : "000000000000000000001302"
@@ -67,7 +75,7 @@ module.exports = [
             {
                 "updatedAt" : "2016-03-22T16:20:57.564Z",
                 "createdAt" : "2016-03-22T14:50:34.037Z",
-                "author" : "Jogesh",
+                "postedBy": "FFFFFFFFFFFFFFFFFFFFFFFF",
                 "comment" : "Yummy",
                 "rating" : 5,
                 "_id" : "000000000000000000001303"
@@ -77,4 +85,4 @@ module.exports = [
         "__v" : 12
     }
 
-];
+]
